@@ -30,11 +30,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func getDataFromFirestore() {
         let fireStoreDatabase = Firestore.firestore()
-        
-        /*let settings = fireStoreDatabase.settings
-         settings.areTimestampsInSnapshotsEnabled = true
-         fireStoreDatabase.settings = settings
-         */
         fireStoreDatabase.collection(Constants.Firestore.collectionName).order(by: Constants.Firestore.dateField, descending: true).addSnapshotListener { (snapshot, error) in
             if error != nil {
                 print(error?.localizedDescription as Any)

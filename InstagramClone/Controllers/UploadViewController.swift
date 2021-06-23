@@ -59,8 +59,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                     imageReference.downloadURL { (url, error) in
                         if error == nil {
                             let imageUrl = url?.absoluteString
-                            
-                            //DATABASE
+
                             let db = Firestore.firestore()
                             
                             let firestorePost = [

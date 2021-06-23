@@ -8,7 +8,7 @@
 import Foundation
 
 struct Constants {
-    static let appName = "Instagram Clone"
+    static let appName = "Instagram Clone!"
     static let cellIdentifier = "Cell"
     static let cellNibName = "MessageCell"
     static let feedSegue = "toFeedVC"
