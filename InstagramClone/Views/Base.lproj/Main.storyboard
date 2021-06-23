@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,6 +22,7 @@
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a comment" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00p-IT-P4L">
                                 <rect key="frame" x="65" y="491.5" width="284" height="34"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="JOv-zC-hdA"/>
                                 </constraints>
@@ -36,7 +36,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <state key="normal" title="Upload">
-                                    <color key="titleColor" systemColor="linkColor"/>
+                                    <color key="titleColor" name="LinkColor"/>
                                 </state>
                                 <connections>
                                     <action selector="actionButtonClicked:" destination="Z2s-Uq-uFC" eventType="touchUpInside" id="cLg-yD-J3W"/>
@@ -77,32 +77,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test123@test123.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvB-DD-ihE">
+                                <rect key="frame" x="65" y="239" width="284" height="35"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="29"/>
+                                <color key="textColor" name="PrimaryColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OFD-4O-QWm">
+                                <rect key="frame" x="87" y="85" width="240" height="128"/>
+                                <color key="tintColor" name="PrimaryColor"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2di-dm-Iin">
-                                <rect key="frame" x="144" y="643" width="126" height="79"/>
+                                <rect key="frame" x="144" y="332" width="126" height="79"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                 <state key="normal" title="Logout">
-                                    <color key="titleColor" systemColor="linkColor"/>
+                                    <color key="titleColor" name="LinkColor"/>
                                 </state>
                                 <connections>
                                     <action selector="logoutClicked:" destination="R1Z-Ue-MGD" eventType="touchUpInside" id="hvw-mg-Je3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test123@test123.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvB-DD-ihE">
-                                <rect key="frame" x="65" y="154" width="284" height="35"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="29"/>
-                                <color key="textColor" name="PrimaryColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="chk-Bu-43x"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="chk-Bu-43x" firstAttribute="bottom" secondItem="2di-dm-Iin" secondAttribute="bottom" constant="91" id="Gq1-1T-6Te"/>
+                            <constraint firstItem="chk-Bu-43x" firstAttribute="bottom" secondItem="2di-dm-Iin" secondAttribute="bottom" constant="402" id="Gq1-1T-6Te"/>
                             <constraint firstItem="2di-dm-Iin" firstAttribute="leading" secondItem="chk-Bu-43x" secondAttribute="leading" constant="144" id="ItY-jN-fL9"/>
+                            <constraint firstItem="OFD-4O-QWm" firstAttribute="leading" secondItem="chk-Bu-43x" secondAttribute="leading" constant="87" id="NSJ-B6-aAA"/>
+                            <constraint firstItem="xvB-DD-ihE" firstAttribute="top" secondItem="OFD-4O-QWm" secondAttribute="bottom" constant="25.5" id="VYj-ns-frp"/>
+                            <constraint firstItem="OFD-4O-QWm" firstAttribute="centerX" secondItem="xvB-DD-ihE" secondAttribute="centerX" id="YuT-3O-c7R"/>
+                            <constraint firstItem="OFD-4O-QWm" firstAttribute="top" secondItem="chk-Bu-43x" secondAttribute="top" constant="40.5" id="d12-w5-inb"/>
                             <constraint firstItem="xvB-DD-ihE" firstAttribute="centerX" secondItem="kUs-as-ySP" secondAttribute="centerX" id="gs5-2g-iaq"/>
-                            <constraint firstItem="2di-dm-Iin" firstAttribute="top" secondItem="chk-Bu-43x" secondAttribute="top" constant="599" id="hst-v9-jBG"/>
+                            <constraint firstItem="2di-dm-Iin" firstAttribute="top" secondItem="chk-Bu-43x" secondAttribute="top" constant="288" id="hst-v9-jBG"/>
                             <constraint firstItem="2di-dm-Iin" firstAttribute="centerX" secondItem="kUs-as-ySP" secondAttribute="centerX" id="t9Z-kg-7oB"/>
-                            <constraint firstItem="xvB-DD-ihE" firstAttribute="top" secondItem="chk-Bu-43x" secondAttribute="top" constant="110" id="wpx-Kw-kIN"/>
+                            <constraint firstItem="xvB-DD-ihE" firstAttribute="top" secondItem="chk-Bu-43x" secondAttribute="top" constant="195" id="wpx-Kw-kIN"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="circles.hexagongrid" catalog="system" id="7mW-Az-toB"/>
@@ -149,8 +157,8 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="41" id="yuG-8R-Fm1"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                    <color key="textColor" name="PrimaryColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puB-QQ-gTo">
@@ -185,7 +193,7 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <state key="normal" title="Like">
-                                                        <color key="titleColor" systemColor="linkColor"/>
+                                                        <color key="titleColor" name="LinkColor"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="likeButtonClicked:" destination="smM-0M-Bph" eventType="touchUpInside" id="BEX-XZ-RHU"/>
@@ -219,6 +227,7 @@
                                         <connections>
                                             <outlet property="commentLabel" destination="puB-QQ-gTo" id="XWj-v0-SrK"/>
                                             <outlet property="documentIdLabel" destination="viI-m0-Dzn" id="ZQb-zh-tJ6"/>
+                                            <outlet property="likeButtonLabel" destination="49z-Jz-XeH" id="kGM-6D-ctq"/>
                                             <outlet property="likeLabel" destination="MtH-Eh-jt2" id="bEo-TN-2iZ"/>
                                             <outlet property="userEmailLabel" destination="Ccm-gq-ypt" id="qRr-5y-dcb"/>
                                             <outlet property="userImageView" destination="jRe-3V-h3J" id="wKb-dq-Lgk"/>
@@ -363,17 +372,18 @@
         <image name="camera.viewfinder" catalog="system" width="128" height="115"/>
         <image name="circles.hexagongrid" catalog="system" width="128" height="112"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BackgroundColor">
-            <color red="0.90588235294117647" green="0.93333333333333335" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81568627450980391" green="0.8666666666666667" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LinkColor">
+            <color red="0.34901960784313724" green="0.53725490196078429" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryColor">
             <color red="0.070588235294117646" green="0.33725490196078434" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
