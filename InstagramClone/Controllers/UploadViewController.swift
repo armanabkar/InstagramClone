@@ -35,13 +35,6 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.dismiss(animated: true, completion: nil)
     }
     
-    func makeAlert(titleInput: String, messageInput: String) {
-        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
-        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-        alert.addAction(okButton)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     @IBAction func actionButtonClicked(_ sender: Any) {
         let storage = Storage.storage()
         let storageReference = storage.reference()
@@ -54,7 +47,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
             
             imageReference.putData(data, metadata: nil) { (metadata, error) in
                 if error != nil {
-                    self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
+                    UIAlertController.showAlert(message: error?.localizedDescription ?? "Error", from: self)
                 } else {
                     imageReference.downloadURL { (url, error) in
                         if error == nil {
@@ -71,7 +64,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                             
                             db.collection(Constants.Firestore.collectionName).addDocument(data: firestorePost) { (error) in
                                 if error != nil {
-                                    self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
+                                    UIAlertController.showAlert(message: error?.localizedDescription ?? "Error", from: self)
                                 } else {
                                     self.imageView.image = UIImage(named: "camera.viewfinder")
                                     self.commentText.text = ""

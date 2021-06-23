@@ -23,8 +23,8 @@ class SettingsViewController: UIViewController {
         do {
             try Auth.auth().signOut()
             self.performSegue(withIdentifier: Constants.authSegue, sender: nil)
-        } catch {
-            print("error")
+        } catch let signOutError as NSError {
+            UIAlertController.showAlert(message: signOutError.localizedDescription, from: self)
         }
     }
     

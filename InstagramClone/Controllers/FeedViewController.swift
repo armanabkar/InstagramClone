@@ -32,7 +32,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let fireStoreDatabase = Firestore.firestore()
         fireStoreDatabase.collection(Constants.Firestore.collectionName).order(by: Constants.Firestore.dateField, descending: true).addSnapshotListener { (snapshot, error) in
             if error != nil {
-                print(error?.localizedDescription as Any)
+                UIAlertController.showAlert(message: error?.localizedDescription ?? "Error", from: self)
             } else {
                 if snapshot?.isEmpty != true && snapshot != nil {
                     self.userImageArray.removeAll(keepingCapacity: false)
