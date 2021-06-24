@@ -312,7 +312,7 @@
                                     <constraint firstAttribute="height" constant="34" id="Hl1-rX-GSQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyz-Mg-dKo">
                                 <rect key="frame" x="255.5" y="472" width="71" height="36"/>
