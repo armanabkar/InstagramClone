@@ -12,12 +12,14 @@ import SDWebImage
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    let refreshControl = UIRefreshControl()
     
     var userEmailArray = [String]()
     var userCommentArray = [String]()
     var likeArray = [Int]()
     var userImageArray = [String]()
     var documentIdArray = [String]()
+    var listener: ListenerRegistration?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +28,20 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         
         getDataFromFirestore()
+        
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        refreshControl.tintColor = UIColor(named: "PrimaryColor")
+        
+        tableView.refreshControl = refreshControl
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        listener?.remove()
     }
     
     func getDataFromFirestore() {
         let fireStoreDatabase = Firestore.firestore()
-        fireStoreDatabase.collection(Constants.Firestore.collectionName).order(by: Constants.Firestore.dateField, descending: true).addSnapshotListener { (snapshot, error) in
+        listener = fireStoreDatabase.collection(Constants.Firestore.collectionName).order(by: Constants.Firestore.dateField, descending: true).addSnapshotListener { (snapshot, error) in
             if error != nil {
                 UIAlertController.showAlert(message: error?.localizedDescription ?? "Error", from: self)
             } else {
@@ -62,6 +73,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                         }
                     }
                     self.tableView.reloadData()
+                    self.refreshControl.endRefreshing()
                 }
             }
         }
@@ -79,6 +91,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.userImageView.sd_setImage(with: URL(string: self.userImageArray[indexPath.row]))
         cell.documentIdLabel.text = documentIdArray[indexPath.row]
         return cell
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        getDataFromFirestore()
     }
     
 }
