@@ -38,7 +38,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillDisappear(_ animated: Bool) {
         listener?.remove()
     }
-    
+
     func getDataFromFirestore() {
         let fireStoreDatabase = Firestore.firestore()
         listener = fireStoreDatabase.collection(Constants.Firestore.collectionName).order(by: Constants.Firestore.dateField, descending: true).addSnapshotListener { (snapshot, error) in

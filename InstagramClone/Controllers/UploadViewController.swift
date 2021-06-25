@@ -41,7 +41,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         let mediaFolder = storageReference.child(Constants.Firestore.storageFolderName)
         
-        if let data = imageView.image?.jpegData(compressionQuality: 0.5) {
+        if let data = imageView.image?.resizeImage(400, opaque: false).jpegData(compressionQuality: 0.5) {
             let uuid = UUID().uuidString
             let imageReference = mediaFolder.child("\(uuid).jpg")
             
@@ -52,7 +52,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                     imageReference.downloadURL { (url, error) in
                         if error == nil {
                             let imageUrl = url?.absoluteString
-
+                            
                             let db = Firestore.firestore()
                             
                             let firestorePost = [
@@ -66,7 +66,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                                 if error != nil {
                                     UIAlertController.showAlert(message: error?.localizedDescription ?? "Error", from: self)
                                 } else {
-                                    self.imageView.image = UIImage(named: "camera.viewfinder")
+                                    self.imageView.image = UIImage(systemName: "camera.viewfinder")
                                     self.commentText.text = ""
                                     self.tabBarController?.selectedIndex = 0
                                 }
@@ -74,7 +74,6 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                             
                             self.commentText.text = ""
                             self.imageView.image = UIImage(systemName: "camera.viewfinder")
-                            
                         }
                     }
                 }

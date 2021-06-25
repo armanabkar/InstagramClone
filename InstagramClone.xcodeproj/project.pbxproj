@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F0037C2326837F3400B57671 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0037C2226837F3400B57671 /* UIAlertControllerExtension.swift */; };
+		F0037C2626846A2300B57671 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0037C2526846A2300B57671 /* UIImageExtension.swift */; };
 		F04327922647245200D75DAC /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04327912647245200D75DAC /* FeedCell.swift */; };
 		F043279526479D0600D75DAC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F043279426479D0600D75DAC /* Constants.swift */; };
 		F0DFA5B72646E2CD0042129B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DFA5B62646E2CD0042129B /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		F0037C2226837F3400B57671 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
+		F0037C2526846A2300B57671 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		F04327912647245200D75DAC /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		F043279426479D0600D75DAC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F0DFA5B32646E2CD0042129B /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 			children = (
 				F043279426479D0600D75DAC /* Constants.swift */,
 				F0037C2226837F3400B57671 /* UIAlertControllerExtension.swift */,
+				F0037C2526846A2300B57671 /* UIImageExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				F04327922647245200D75DAC /* FeedCell.swift in Sources */,
 				F0DFA5BB2646E2CD0042129B /* AuthController.swift in Sources */,
 				F0DFA5E22646E99E0042129B /* UploadViewController.swift in Sources */,
+				F0037C2626846A2300B57671 /* UIImageExtension.swift in Sources */,
 				F0DFA5B72646E2CD0042129B /* AppDelegate.swift in Sources */,
 				F0DFA5DF2646E98F0042129B /* FeedViewController.swift in Sources */,
 				F0037C2326837F3400B57671 /* UIAlertControllerExtension.swift in Sources */,
@@ -371,6 +375,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.InstagramClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -390,6 +395,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.InstagramClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

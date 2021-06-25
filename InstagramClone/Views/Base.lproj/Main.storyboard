@@ -113,7 +113,7 @@
                             <constraint firstItem="xvB-DD-ihE" firstAttribute="top" secondItem="chk-Bu-43x" secondAttribute="top" constant="195" id="wpx-Kw-kIN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="circles.hexagongrid" catalog="system" id="7mW-Az-toB"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="person.circle.fill" catalog="system" id="7mW-Az-toB"/>
                     <connections>
                         <outlet property="userLabel" destination="xvB-DD-ihE" id="Msz-fc-8No"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="toAuthController" modalPresentationStyle="fullScreen" id="0xj-Vo-eSw"/>
@@ -245,7 +245,7 @@
                             <constraint firstItem="cAx-LA-UD9" firstAttribute="top" secondItem="Fql-7L-KfT" secondAttribute="top" id="l3c-Rm-MkD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feed" image="homekit" catalog="system" id="U0W-lO-8ZE"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="house" catalog="system" id="U0W-lO-8ZE"/>
                     <connections>
                         <outlet property="tableView" destination="cAx-LA-UD9" id="7mZ-9X-66C"/>
                     </connections>
@@ -370,8 +370,7 @@
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="camera.viewfinder" catalog="system" width="128" height="115"/>
-        <image name="circles.hexagongrid" catalog="system" width="128" height="112"/>
-        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

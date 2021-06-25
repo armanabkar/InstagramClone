@@ -4,8 +4,9 @@ This app is based on the [IOS20-InstaCloneFirebase](https://github.com/atilsaman
 
 ## New Features
 
+- Image optimizations before upload to Firebase
 - Pull-to-Refresh in feed
-- Bug and memory leak fixed
+- Bugs and memory leak (in Feed) fixed
 - Layout problems fixed
 - UIAlert for possible errors (instead of just printing them)
 - Some Refactorings
