@@ -17,20 +17,20 @@ class AuthController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        animateText(Constants.appName)
+        animateText(K.appName)
     }
     
     @IBAction func signInClicked(_ sender: Any) {
         if emailText.text != "" && passwordText.text != "" {
             Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!) { (authData, error) in
                 if error != nil {
-                    UIAlertController.showAlert(message: error?.localizedDescription ?? "Error", from: self)
+                    UIAlertController.showAlert(message: error?.localizedDescription ?? K.error.title, from: self)
                 } else {
-                    self.performSegue(withIdentifier: Constants.feedSegue, sender: nil)
+                    self.performSegue(withIdentifier: K.feedSegue, sender: nil)
                 }
             }
         } else {
-            UIAlertController.showAlert(message: "Please enter a valid username/password.", from: self)
+            UIAlertController.showAlert(message: K.error.invalidFieldMessage, from: self)
         }
     }
     
@@ -38,13 +38,13 @@ class AuthController: UIViewController {
         if emailText.text != "" && passwordText.text != "" {
             Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!) { (authData, error) in
                 if error != nil {
-                    UIAlertController.showAlert(message: error?.localizedDescription ?? "Error", from: self)
+                    UIAlertController.showAlert(message: error?.localizedDescription ?? K.error.title, from: self)
                 } else {
-                    self.performSegue(withIdentifier: Constants.feedSegue, sender: nil)
+                    self.performSegue(withIdentifier: K.feedSegue, sender: nil)
                 }
             }
         } else {
-            UIAlertController.showAlert(message: "Please enter a valid username/password.", from: self)
+            UIAlertController.showAlert(message: K.error.invalidFieldMessage, from: self)
         }
     }
     

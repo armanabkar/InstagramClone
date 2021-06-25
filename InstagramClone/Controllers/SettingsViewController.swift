@@ -22,7 +22,7 @@ class SettingsViewController: UIViewController {
     @IBAction func logoutClicked(_ sender: Any) {
         do {
             try Auth.auth().signOut()
-            self.performSegue(withIdentifier: Constants.authSegue, sender: nil)
+            self.performSegue(withIdentifier: K.authSegue, sender: nil)
         } catch let signOutError as NSError {
             UIAlertController.showAlert(message: signOutError.localizedDescription, from: self)
         }
