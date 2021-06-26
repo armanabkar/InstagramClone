@@ -11,5 +11,6 @@ This app is based on the [IOS20-InstaCloneFirebase](https://github.com/atilsaman
 - UIAlert for possible errors (instead of just printing them)
 - Some Refactorings
 - UI/UX Improvements
+- Better MVC architecture
 - Swift Package Manager (instead of Cocoapods)
 

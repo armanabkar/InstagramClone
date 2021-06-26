@@ -14,11 +14,7 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let refreshControl = UIRefreshControl()
     
-    var userEmailArray = [String]()
-    var userCommentArray = [String]()
-    var likeArray = [Int]()
-    var userImageArray = [String]()
-    var documentIdArray = [String]()
+    var posts: [Post] = []
     var listener: ListenerRegistration?
     
     override func viewDidLoad() {
@@ -39,6 +35,15 @@ class FeedViewController: UIViewController {
         listener?.remove()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        getDataFromFirestore()
+        
+        DispatchQueue.main.async {
+            self.tableView.beginUpdates()
+            self.tableView.setContentOffset(CGPoint.zero, animated: true)
+            self.tableView.endUpdates()
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -46,16 +51,16 @@ class FeedViewController: UIViewController {
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userEmailArray.count
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! FeedCell
-        cell.userEmailLabel.text = userEmailArray[indexPath.row]
-        cell.likeLabel.text = String(likeArray[indexPath.row])
-        cell.commentLabel.text = userCommentArray[indexPath.row]
-        cell.userImageView.sd_setImage(with: URL(string: self.userImageArray[indexPath.row]))
-        cell.documentIdLabel.text = documentIdArray[indexPath.row]
+        cell.userEmailLabel.text = posts[indexPath.row].postedBy
+        cell.likeLabel.text = String(posts[indexPath.row].likes)
+        cell.commentLabel.text = posts[indexPath.row].postComment
+        cell.userImageView.sd_setImage(with: URL(string: self.posts[indexPath.row].imageUrl))
+        cell.documentIdLabel.text = posts[indexPath.row].documentID
         return cell
     }
     
@@ -66,34 +71,24 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
                 UIAlertController.showAlert(message: error?.localizedDescription ?? K.error.title, from: self)
             } else {
                 if snapshot?.isEmpty != true && snapshot != nil {
-                    self.userImageArray.removeAll(keepingCapacity: false)
-                    self.userEmailArray.removeAll(keepingCapacity: false)
-                    self.userCommentArray.removeAll(keepingCapacity: false)
-                    self.likeArray.removeAll(keepingCapacity: false)
-                    self.documentIdArray.removeAll(keepingCapacity: false)
+                    self.posts.removeAll(keepingCapacity: false)
                     
                     for document in snapshot!.documents {
                         let documentID = document.documentID
-                        self.documentIdArray.append(documentID)
                         
-                        if let postedBy = document.get(K.Firestore.postedByField) as? String {
-                            self.userEmailArray.append(postedBy)
-                        }
-                        
-                        if let postComment = document.get(K.Firestore.postCommentField) as? String {
-                            self.userCommentArray.append(postComment)
-                        }
-                        
-                        if let likes = document.get(K.Firestore.likesField) as? Int {
-                            self.likeArray.append(likes)
-                        }
-                        
-                        if let imageUrl = document.get(K.Firestore.imageUrlField) as? String {
-                            self.userImageArray.append(imageUrl)
+                        if let postedBy = document.get(K.Firestore.postedByField) as? String,
+                           let postComment = document.get(K.Firestore.postCommentField) as? String,
+                           let likes = document.get(K.Firestore.likesField) as? Int,
+                           let imageUrl = document.get(K.Firestore.imageUrlField) as? String {
+                            let newPost = Post(postedBy: postedBy, postComment: postComment, likes: likes, imageUrl: imageUrl, documentID: documentID)
+                            self.posts.append(newPost)
                         }
                     }
-                    self.tableView.reloadData()
-                    self.refreshControl.endRefreshing()
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                        self.refreshControl.endRefreshing()
+                    }
                 }
             }
         }

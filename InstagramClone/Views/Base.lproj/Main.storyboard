@@ -153,6 +153,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cAx-LA-UD9">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" name="BackgroundColor"/>
+                                <color key="separatorColor" name="PrimaryColor"/>
                                 <color key="sectionIndexBackgroundColor" name="BackgroundColor"/>
                                 <color key="sectionIndexTrackingBackgroundColor" name="BackgroundColor"/>
                                 <prototypes>

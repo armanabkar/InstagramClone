@@ -72,14 +72,18 @@ extension UploadViewController: UIImagePickerControllerDelegate, UINavigationCon
                                 if error != nil {
                                     UIAlertController.showAlert(message: error?.localizedDescription ?? K.error.title, from: self)
                                 } else {
-                                    self.imageView.image = UIImage(systemName: K.icons.camera)
-                                    self.commentText.text = ""
+                                    DispatchQueue.main.async {
+                                        self.imageView.image = UIImage(systemName: K.icons.camera)
+                                        self.commentText.text = ""
+                                    }
                                     self.tabBarController?.selectedIndex = 0
                                 }
                             }
                             
-                            self.commentText.text = ""
-                            self.imageView.image = UIImage(systemName: K.icons.camera)
+                            DispatchQueue.main.async {
+                                self.commentText.text = ""
+                                self.imageView.image = UIImage(systemName: K.icons.camera)
+                            }
                         }
                     }
                 }

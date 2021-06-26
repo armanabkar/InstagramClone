@@ -25,6 +25,7 @@
 		F0DFA5DF2646E98F0042129B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DFA5DE2646E98F0042129B /* FeedViewController.swift */; };
 		F0DFA5E22646E99E0042129B /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DFA5E12646E99E0042129B /* UploadViewController.swift */; };
 		F0DFA5E52646E9AC0042129B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DFA5E42646E9AC0042129B /* SettingsViewController.swift */; };
+		F0F689732686300B00EE96E7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F689722686300B00EE96E7 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		F0DFA5DE2646E98F0042129B /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		F0DFA5E12646E99E0042129B /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		F0DFA5E42646E9AC0042129B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F0F689722686300B00EE96E7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		F0DFA5B52646E2CD0042129B /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				F0F6897126862FEC00EE96E7 /* Models */,
 				F046E2412685B575005F95A3 /* Constants */,
 				F0DFA5DC2646E86A0042129B /* Helpers */,
 				F0DFA5DB2646E8600042129B /* Controllers */,
@@ -137,6 +140,14 @@
 				F0037C2526846A2300B57671 /* UIImageExtension.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F0F6897126862FEC00EE96E7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0F689722686300B00EE96E7 /* Post.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F04327922647245200D75DAC /* FeedCell.swift in Sources */,
+				F0F689732686300B00EE96E7 /* Post.swift in Sources */,
 				F0DFA5BB2646E2CD0042129B /* AuthController.swift in Sources */,
 				F0DFA5E22646E99E0042129B /* UploadViewController.swift in Sources */,
 				F0037C2626846A2300B57671 /* UIImageExtension.swift in Sources */,
