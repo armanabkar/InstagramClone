@@ -11,6 +11,7 @@
 		F0037C2626846A2300B57671 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0037C2526846A2300B57671 /* UIImageExtension.swift */; };
 		F04327922647245200D75DAC /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04327912647245200D75DAC /* FeedCell.swift */; };
 		F046E2432685B583005F95A3 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = F046E2422685B583005F95A3 /* K.swift */; };
+		F09793F02687165C005CBB28 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09793EF2687165C005CBB28 /* ProfileViewController.swift */; };
 		F0DFA5B72646E2CD0042129B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DFA5B62646E2CD0042129B /* AppDelegate.swift */; };
 		F0DFA5B92646E2CD0042129B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DFA5B82646E2CD0042129B /* SceneDelegate.swift */; };
 		F0DFA5BB2646E2CD0042129B /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DFA5BA2646E2CD0042129B /* AuthController.swift */; };
@@ -33,6 +34,7 @@
 		F0037C2526846A2300B57671 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		F04327912647245200D75DAC /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		F046E2422685B583005F95A3 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		F09793EF2687165C005CBB28 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F0DFA5B32646E2CD0042129B /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DFA5B62646E2CD0042129B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0DFA5B82646E2CD0042129B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				F0DFA5DE2646E98F0042129B /* FeedViewController.swift */,
 				F0DFA5E12646E99E0042129B /* UploadViewController.swift */,
 				F0DFA5E42646E9AC0042129B /* SettingsViewController.swift */,
+				F09793EF2687165C005CBB28 /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				F0DFA5E22646E99E0042129B /* UploadViewController.swift in Sources */,
 				F0037C2626846A2300B57671 /* UIImageExtension.swift in Sources */,
 				F0DFA5B72646E2CD0042129B /* AppDelegate.swift in Sources */,
+				F09793F02687165C005CBB28 /* ProfileViewController.swift in Sources */,
 				F0DFA5DF2646E98F0042129B /* FeedViewController.swift in Sources */,
 				F0037C2326837F3400B57671 /* UIAlertControllerExtension.swift in Sources */,
 				F046E2432685B583005F95A3 /* K.swift in Sources */,

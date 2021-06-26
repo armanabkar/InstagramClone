@@ -56,7 +56,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! FeedCell
-        cell.userEmailLabel.text = posts[indexPath.row].postedBy
+        cell.userEmailLabel.setTitle(posts[indexPath.row].postedBy, for: .normal)
         cell.likeLabel.text = String(posts[indexPath.row].likes)
         cell.commentLabel.text = posts[indexPath.row].postComment
         cell.userImageView.sd_setImage(with: URL(string: self.posts[indexPath.row].imageUrl))
